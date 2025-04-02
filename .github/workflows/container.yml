@@ -21,6 +21,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Check Docker Compose Version
+        run: docker compose version
+
+
       - name: Log in to Docker Hub
         run: |
           if [ -z "${{ secrets.DOCKER_PASSWORD }}" ]; then
